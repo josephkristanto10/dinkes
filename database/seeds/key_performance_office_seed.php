@@ -1,6 +1,6 @@
 <?php
 
-use App\models\KeyPerformanceOfficer;
+use App\Models\KeyPerformanceOfficer;
 use Illuminate\Database\Seeder;
 
 class key_performance_office_seed extends Seeder
