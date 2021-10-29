@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 48,
+            "activePatchIndex": 59,
             "patches": [
                 {
                     "date": 1634561304707,
@@ -200,6 +200,50 @@
                 {
                     "date": 1634562889296,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,10 +38,8 @@\n                 return \"ok\";\n             } else {\n                 return \"none\";\n             }\n-          \n-           \n         }\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635223081591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Hashing\\BcryptHasher;\n-use App\\Models\\PublicHealthCenterDoctor;\n+use App\\Models\\OfficeGeneral;\n use Illuminate\\Http\\Request;\n \n class UserController extends Controller\n {\n@@ -32,9 +32,8 @@\n         }\n         else{\n             $passwordfromdb = $data[0]['password'];\n             $passwordfromuser = $request->password;\n-\n             if (password_verify($passwordfromuser, $passwordfromdb)) {\n                 return \"ok\";\n             } else {\n                 return \"none\";\n"
+                },
+                {
+                    "date": 1635223414248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n namespace App\\Http\\Controllers;\n \n use Illuminate\\Hashing\\BcryptHasher;\n-use App\\Models\\OfficeGeneral;\n+use App\\Models\\OfficerGeneral;\n use Illuminate\\Http\\Request;\n \n class UserController extends Controller\n {\n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = PublicHealthCenterDoctor::where(\"nik\",'=',$request->nik)->get();\n+        $data = OfficerGeneral::where(\"nik\",'=',$request->nik)->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317223414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         else{\n             $passwordfromdb = $data[0]['password'];\n             $passwordfromuser = $request->password;\n             if (password_verify($passwordfromuser, $passwordfromdb)) {\n-                return \"ok\";\n+                return $data;\n             } else {\n                 return \"none\";\n             }\n         }\n"
+                },
+                {
+                    "date": 1635317249594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = OfficerGeneral::where(\"nik\",'=',$request->nik)->get();\n+        $data = OfficerGeneral::join()->where(\"nik\",'=',$request->nik)->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317256334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = OfficerGeneral::join()->where(\"nik\",'=',$request->nik)->get();\n+        $data = OfficerGeneral::join(\"\")->where(\"nik\",'=',$request->nik)->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317277443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = OfficerGeneral::join(\"\")->where(\"nik\",'=',$request->nik)->get();\n+        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"role\",'role.id','=','officer_general.id_role')->where(\"nik\",'=',$request->nik)->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317303076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"role\",'role.id','=','officer_general.id_role')->where(\"nik\",'=',$request->nik)->get();\n+        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"position\",'position.id','=','officer_general.id_position')->where(\"nik\",'=',$request->nik)->select(\"officer_general.*, \")->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317308382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"position\",'position.id','=','officer_general.id_position')->where(\"nik\",'=',$request->nik)->select(\"officer_general.*, \")->get();\n+        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"position\",'position.id','=','officer_general.id_position')->where(\"nik\",'=',$request->nik)->select(\"officer_general.*\")->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317323551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // \n         $options = [\n             'cost' => 11\n           ];\n-        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"position\",'position.id','=','officer_general.id_position')->where(\"nik\",'=',$request->nik)->select(\"officer_general.*\")->get();\n+        $data = OfficerGeneral::join(\"role\",'role.id','=','officer_general.id_role')->join(\"position\",'position.id','=','officer_general.id_position')->where(\"nik\",'=',$request->nik)->select(\"officer_general.*\",'position.name as position','role.name as role')->get();\n         if($data->count() == 0)\n         {\n            return \"none\";\n         }\n"
+                },
+                {
+                    "date": 1635317550736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         else{\n             $passwordfromdb = $data[0]['password'];\n             $passwordfromuser = $request->password;\n             if (password_verify($passwordfromuser, $passwordfromdb)) {\n-                return $data;\n+                return print json_encode(array('data' => $row));\n             } else {\n                 return \"none\";\n             }\n         }\n"
+                },
+                {
+                    "date": 1635317558149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n         else{\n             $passwordfromdb = $data[0]['password'];\n             $passwordfromuser = $request->password;\n             if (password_verify($passwordfromuser, $passwordfromdb)) {\n-                return print json_encode(array('data' => $row));\n+                return print json_encode(array('data' => $data));\n             } else {\n                 return \"none\";\n             }\n         }\n"
                 }
             ],
             "date": 1634561304707,

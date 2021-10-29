@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1634523544689,
@@ -28,6 +28,34 @@
                 {
                     "date": 1634523594307,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n \n-use App\\Models\\PublicHealthCenter;\n+use App\\Models\\PublicHealthCenterDoctor;\n use Illuminate\\Database\\Seeder;\n \n class public_health_center_doctor_seed extends Seeder\n {\n@@ -15,8 +15,8 @@\n         include base_path().'/database/seeds/public_health_office.php';\n         $public_health_center_doctors = $public_health_center_doctor;\n         DB::table('public_health_center_doctor')->delete();\n         foreach($public_health_center_doctors as $phcd){\n-            PublicHealthCenter::create($phcd);\n+            PublicHealthCenterDoctor::create($phcd);\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1635218856856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n         $public_health_center_doctors = $public_health_center_doctor;\n-        DB::table('public_health_center_doctor')->delete();\n+        DB::table('officer_general')->delete();\n         foreach($public_health_center_doctors as $phcd){\n             PublicHealthCenterDoctor::create($phcd);\n         }\n     }\n"
+                },
+                {
+                    "date": 1635218862609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      */\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n-        $public_health_center_doctors = $public_health_center_doctor;\n+        $public_health_center_doctors = $officer_general;\n         DB::table('officer_general')->delete();\n         foreach($public_health_center_doctors as $phcd){\n             PublicHealthCenterDoctor::create($phcd);\n         }\n"
+                },
+                {
+                    "date": 1635218891100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n      */\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n-        $public_health_center_doctors = $officer_general;\n-        DB::table('officer_general')->delete();\n+        $public_health_center_doctors = $public_health_center_doctor;\n+        DB::table('office')->delete();\n         foreach($public_health_center_doctors as $phcd){\n             PublicHealthCenterDoctor::create($phcd);\n         }\n     }\n"
+                },
+                {
+                    "date": 1635323402498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n         $public_health_center_doctors = $public_health_center_doctor;\n-        DB::table('office')->delete();\n+        DB::table('officer_general')->delete();\n         foreach($public_health_center_doctors as $phcd){\n             PublicHealthCenterDoctor::create($phcd);\n         }\n     }\n"
+                },
+                {
+                    "date": 1635323408439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n \n-use App\\Models\\PublicHealthCenterDoctor;\n+use App\\Models\\OfficerGeneral;\n use Illuminate\\Database\\Seeder;\n \n class public_health_center_doctor_seed extends Seeder\n {\n"
+                },
+                {
+                    "date": 1635323442627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,11 @@\n      */\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n-        $public_health_center_doctors = $public_health_center_doctor;\n+        $public_health_center_doctors = $officer_general;\n         DB::table('officer_general')->delete();\n         foreach($public_health_center_doctors as $phcd){\n-            PublicHealthCenterDoctor::create($phcd);\n+            OfficerGeneral::create($phcd);\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1635323448263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,11 @@\n      */\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n-        $public_health_center_doctors = $officer_general;\n+        $officer_generals = $officer_general;\n         DB::table('officer_general')->delete();\n-        foreach($public_health_center_doctors as $phcd){\n+        foreach($officer_generals as $og){\n             OfficerGeneral::create($phcd);\n         }\n     }\n }\n"
                 }
             ],
             "date": 1634523544689,

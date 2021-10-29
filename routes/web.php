@@ -16,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("actiondoctor/getdataperday", "ActionDoctorController@getresultperday");
+Route::get("actiondoctor/getdetail", "ActionDoctorController@getdetail");
+Route::post("actiondoctor/submitaction", "ActionDoctorController@addaction");
+Route::get("actiondoctor/getaction", "ActionDoctorController@showaction");
 Route::get("publichealthcenterdoctor/login", 'UserController@login');
 Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');

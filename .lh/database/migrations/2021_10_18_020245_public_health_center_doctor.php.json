@@ -3,11 +3,47 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 9,
             "patches": [
                 {
                     "date": 1634522912313,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635218677923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,18 +12,18 @@\n      * @return void\n      */\n     public function up()\n     {\n-        Schema::create('public_health_center_doctor', function (Blueprint $table) {\n+        Schema::create('users', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->string('name');\n             $table->string('nik');\n             $table->string('address');\n             $table->string('phone');\n             $table->string('email');\n-            $table->string('email');\n+            $table->string('password');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1635218684796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return void\n      */\n     public function up()\n     {\n-        Schema::create('users', function (Blueprint $table) {\n+        Schema::create('officer_user', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->string('name');\n"
+                },
+                {
+                    "date": 1635218692276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n      * @return void\n      */\n     public function up()\n     {\n-        Schema::create('officer_user', function (Blueprint $table) {\n+        Schema::create('officer_general', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->string('name');\n"
+                },
+                {
+                    "date": 1635218699725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,12 @@\n         Schema::create('officer_general', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n+            $table->integer('public_health_center')->unsigned();\n+            $table->foreign('public_health_center')->references('id')->on('public_health_center');\n+            $table->integer('public_health_center')->unsigned();\n+            $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->string('name');\n             $table->string('nik');\n             $table->string('address');\n             $table->string('phone');\n"
+                },
+                {
+                    "date": 1635218706842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('officer_general', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n-            $table->integer('public_health_center')->unsigned();\n+            $table->integer('id_role')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->string('name');\n"
+                },
+                {
+                    "date": 1635218714212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->integer('id_role')->unsigned();\n+            $table->foreign('id_role')->references('id')->on('role');\n+            $table->integer('id_position')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n-            $table->integer('public_health_center')->unsigned();\n-            $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->string('name');\n             $table->string('nik');\n             $table->string('address');\n             $table->string('phone');\n"
+                },
+                {
+                    "date": 1635218720420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n             $table->integer('id_role')->unsigned();\n             $table->foreign('id_role')->references('id')->on('role');\n             $table->integer('id_position')->unsigned();\n-            $table->foreign('public_health_center')->references('id')->on('public_health_center');\n+            $table->foreign('id_position')->references('id')->on('position');\n             $table->string('name');\n             $table->string('nik');\n             $table->string('address');\n             $table->string('phone');\n"
+                },
+                {
+                    "date": 1635218756159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,12 @@\n         Schema::create('officer_general', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n-            $table->integer('id_role')->unsigned();\n-            $table->foreign('id_role')->references('id')->on('role');\n-            $table->integer('id_position')->unsigned();\n-            $table->foreign('id_position')->references('id')->on('position');\n+            // $table->integer('id_role')->unsigned();\n+            // $table->foreign('id_role')->references('id')->on('role');\n+            // $table->integer('id_position')->unsigned();\n+            // $table->foreign('id_position')->references('id')->on('position');\n             $table->string('name');\n             $table->string('nik');\n             $table->string('address');\n             $table->string('phone');\n"
+                },
+                {
+                    "date": 1635222367783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,12 @@\n         Schema::create('officer_general', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('public_health_center')->unsigned();\n             $table->foreign('public_health_center')->references('id')->on('public_health_center');\n-            // $table->integer('id_role')->unsigned();\n-            // $table->foreign('id_role')->references('id')->on('role');\n-            // $table->integer('id_position')->unsigned();\n-            // $table->foreign('id_position')->references('id')->on('position');\n+            $table->integer('id_role')->unsigned();\n+            $table->foreign('id_role')->references('id')->on('role');\n+            $table->integer('id_position')->unsigned();\n+            $table->foreign('id_position')->references('id')->on('position');\n             $table->string('name');\n             $table->string('nik');\n             $table->string('address');\n             $table->string('phone');\n"
                 }
             ],
             "date": 1634522912313,

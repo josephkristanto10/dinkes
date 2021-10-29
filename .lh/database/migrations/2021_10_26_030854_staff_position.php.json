@@ -1,0 +1,34 @@
+{
+    "sourceFile": "database/migrations/2021_10_26_030854_staff_position.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1635217804238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635217810350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,11 @@\n      * @return void\n      */\n     public function up()\n     {\n-        Schema::create('action_doctor', function (Blueprint $table) {\n+        Schema::create('position', function (Blueprint $table) {\n             $table->increments(\"id\");\n-            $table->integer('id_key_performance')->unsigned();\n+            $table->integer('name')->unsigned();\n             $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n             $table->integer('id_public_health_doctor')->unsigned();\n             $table->foreign('id_public_health_doctor')->references('id')->on('public_health_center_doctor');\n             $table->integer('quantity');\n"
+                },
+                {
+                    "date": 1635217817629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,15 +14,9 @@\n     public function up()\n     {\n         Schema::create('position', function (Blueprint $table) {\n             $table->increments(\"id\");\n-            $table->integer('name')->unsigned();\n-            $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n-            $table->integer('id_public_health_doctor')->unsigned();\n-            $table->foreign('id_public_health_doctor')->references('id')->on('public_health_center_doctor');\n-            $table->integer('quantity');\n-            $table->integer('score_per_action');\n-            $table->integer('total_score');\n+            $table->integer('name');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1635217823597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n      * @return void\n      */\n     public function down()\n     {\n-        Schema::dropIfExists('action_doctor');\n+        Schema::dropIfExists('position');\n     }\n }\n"
+                },
+                {
+                    "date": 1635219808429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('position', function (Blueprint $table) {\n             $table->increments(\"id\");\n-            $table->integer('name');\n+            $table->string('name');\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1635217804238,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nclass StaffPosition extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('action_doctor', function (Blueprint $table) {\n            $table->increments(\"id\");\n            $table->integer('id_key_performance')->unsigned();\n            $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n            $table->integer('id_public_health_doctor')->unsigned();\n            $table->foreign('id_public_health_doctor')->references('id')->on('public_health_center_doctor');\n            $table->integer('quantity');\n            $table->integer('score_per_action');\n            $table->integer('total_score');\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('action_doctor');\n    }\n}\n"
+        }
+    ]
+}

@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Hashing\BcryptHasher;
-use App\Models\PublicHealthCenterDoctor;
+use App\Models\OfficerGeneral;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -25,7 +25,7 @@ class UserController extends Controller
         $options = [
             'cost' => 11
           ];
-        $data = PublicHealthCenterDoctor::where("nik",'=',$request->nik)->get();
+        $data = OfficerGeneral::join("role",'role.id','=','officer_general.id_role')->join("position",'position.id','=','officer_general.id_position')->where("nik",'=',$request->nik)->select("officer_general.*",'position.name as position','role.name as role')->get();
         if($data->count() == 0)
         {
            return "none";
@@ -34,7 +34,7 @@ class UserController extends Controller
             $passwordfromdb = $data[0]['password'];
             $passwordfromuser = $request->password;
             if (password_verify($passwordfromuser, $passwordfromdb)) {
-                return "ok";
+                return print json_encode(array('data' => $data));
             } else {
                 return "none";
             }

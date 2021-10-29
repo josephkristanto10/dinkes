@@ -35,6 +35,6 @@ class PublicHealthOfficeOfficer extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('public_health_office_officer');
     }
 }

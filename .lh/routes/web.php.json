@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1634546136405,
@@ -36,6 +36,46 @@
                 {
                     "date": 1634561511537,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n \n Route::get('/', function () {\n     return view('welcome');\n });\n-Route::get(\"publichealthcenterdoctor/login\", 'UserController@');\n+Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635324828549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,7 @@\n \n Route::get('/', function () {\n     return view('welcome');\n });\n+Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\")\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635325419914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n \n Route::get('/', function () {\n     return view('welcome');\n });\n-Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\")\n+Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635327627789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,7 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n+Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635327632969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,7 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n-Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n+Route::post(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635327750434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,7 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n-Route::post(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n+Route::get(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635475578869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,10 @@\n \n Route::get('/', function () {\n     return view('welcome');\n });\n+\n+Route::get(\"\")\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635475593162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get(\"\")\n+Route::get(\"actiondoctor/getdataperday\")\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635475612509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n Route::get('/', function () {\n     return view('welcome');\n });\n \n-Route::get(\"actiondoctor/getdataperday\")\n+Route::get(\"actiondoctor/getdataperday\", \"ActionDoctorController@getresultperday\");\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635479321206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n     return view('welcome');\n });\n \n Route::get(\"actiondoctor/getdataperday\", \"ActionDoctorController@getresultperday\");\n+Route::get(\"actiondoctor/getdataperday\", \"ActionDoctorController@getresultperday\");\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
+                },
+                {
+                    "date": 1635479331497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     return view('welcome');\n });\n \n Route::get(\"actiondoctor/getdataperday\", \"ActionDoctorController@getresultperday\");\n-Route::get(\"actiondoctor/getdataperday\", \"ActionDoctorController@getresultperday\");\n+Route::get(\"actiondoctor/getdetail\", \"ActionDoctorController@getdetail\");\n Route::post(\"actiondoctor/submitaction\", \"ActionDoctorController@addaction\");\n Route::get(\"actiondoctor/getaction\", \"ActionDoctorController@showaction\");\n Route::get(\"publichealthcenterdoctor/login\", 'UserController@login');\n Route::get('keyperformancedoctor/getDataKPI','KeyPerformanceDoctorController@getDataKPI');\n"
                 }
             ],
             "date": 1634546136405,

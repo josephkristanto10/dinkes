@@ -17,8 +17,8 @@ class ActionDoctor extends Migration
             $table->increments("id");
             $table->integer('id_key_performance')->unsigned();
             $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');
-            $table->integer('id_public_health_doctor')->unsigned();
-            $table->foreign('id_public_health_doctor')->references('id')->on('public_health_center_doctor');
+            $table->integer('id_officer_general')->unsigned();
+            $table->foreign('id_officer_general')->references('id')->on('officer_general');
             $table->integer('quantity');
             $table->integer('score_per_action');
             $table->integer('total_score');
@@ -33,6 +33,6 @@ class ActionDoctor extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('action_doctor');
     }
 }

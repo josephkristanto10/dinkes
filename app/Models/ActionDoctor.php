@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id
  * @property int $id_key_performance
- * @property int $id_public_health_doctor
+ * @property int $id_officer_general
  * @property int $quantity
  * @property int $score_per_action
  * @property int $total_score
@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $updated_at
  * 
  * @property KeyPerformanceDoctor $key_performance_doctor
- * @property PublicHealthCenterDoctor $public_health_center_doctor
+ * @property OfficerGeneral $officer_general
  *
  * @package App\Models
  */
@@ -32,7 +32,7 @@ class ActionDoctor extends Model
 
 	protected $casts = [
 		'id_key_performance' => 'int',
-		'id_public_health_doctor' => 'int',
+		'id_officer_general' => 'int',
 		'quantity' => 'int',
 		'score_per_action' => 'int',
 		'total_score' => 'int'
@@ -40,7 +40,7 @@ class ActionDoctor extends Model
 
 	protected $fillable = [
 		'id_key_performance',
-		'id_public_health_doctor',
+		'id_officer_general',
 		'quantity',
 		'score_per_action',
 		'total_score'
@@ -51,8 +51,8 @@ class ActionDoctor extends Model
 		return $this->belongsTo(KeyPerformanceDoctor::class, 'id_key_performance');
 	}
 
-	public function public_health_center_doctor()
+	public function officer_general()
 	{
-		return $this->belongsTo(PublicHealthCenterDoctor::class, 'id_public_health_doctor');
+		return $this->belongsTo(OfficerGeneral::class, 'id_officer_general');
 	}
 }

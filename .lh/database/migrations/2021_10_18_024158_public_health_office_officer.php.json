@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1634524929390,
@@ -36,6 +36,10 @@
                 {
                     "date": 1634524994267,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n             $table->string('address');\n             $table->string('phone');\n             $table->string('email');\n             $table->string('password');\n+            $table->string(\"status\");\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1635217789370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,7 +34,7 @@\n      * @return void\n      */\n     public function down()\n     {\n-        //\n+        Schema::dropIfExists('key_performance_officer');\n     }\n }\n"
                 }
             ],
             "date": 1634524929390,

@@ -1,6 +1,6 @@
 <?php
 
-use App\models\KeyPerformanceDoctor;
+use App\Models\KeyPerformanceDoctor;
 use Illuminate\Database\Seeder;
 
 class key_performance_doctor_seed extends Seeder

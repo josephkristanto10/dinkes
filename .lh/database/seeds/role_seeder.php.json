@@ -1,0 +1,34 @@
+{
+    "sourceFile": "database/seeds/role_seeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1635219977920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635219983916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n      */\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n-        $positions = $position;\n+        $roles = $role;\n         DB::table('position')->delete();\n         foreach($positions as $p){\n             Position::create($p);\n         }\n"
+                },
+                {
+                    "date": 1635219989355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n     public function run()\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n         $roles = $role;\n-        DB::table('position')->delete();\n-        foreach($positions as $p){\n+        DB::table('role')->delete();\n+        foreach($roles as $p){\n             Position::create($p);\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1635219996232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     {\n         include base_path().'/database/seeds/public_health_office.php';\n         $roles = $role;\n         DB::table('role')->delete();\n-        foreach($roles as $p){\n-            Position::create($p);\n+        foreach($roles as $r){\n+            Role::create($r);\n         }\n     }\n }\n"
+                },
+                {
+                    "date": 1635220006054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n \n+use App\\Models\\Role;\n use Illuminate\\Database\\Seeder;\n \n class role_seeder extends Seeder\n {\n"
+                }
+            ],
+            "date": 1635219977920,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Seeder;\n\nclass role_seeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        include base_path().'/database/seeds/public_health_office.php';\n        $positions = $position;\n        DB::table('position')->delete();\n        foreach($positions as $p){\n            Position::create($p);\n        }\n    }\n}\n"
+        }
+    ]
+}

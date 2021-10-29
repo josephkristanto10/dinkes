@@ -1,0 +1,18 @@
+{
+    "sourceFile": "app/Models/ActionDoctor.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1635323838028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1635323838028,
+            "name": "Commit-0",
+            "content": "<?php\n\n/**\n * Created by Reliese Model.\n */\n\nnamespace App\\Models;\n\nuse Carbon\\Carbon;\nuse Illuminate\\Database\\Eloquent\\Model;\n\n/**\n * Class ActionDoctor\n * \n * @property int $id\n * @property int $id_key_performance\n * @property int $id_officer_general\n * @property int $quantity\n * @property int $score_per_action\n * @property int $total_score\n * @property Carbon|null $created_at\n * @property Carbon|null $updated_at\n * \n * @property KeyPerformanceDoctor $key_performance_doctor\n * @property OfficerGeneral $officer_general\n *\n * @package App\\Models\n */\nclass ActionDoctor extends Model\n{\n\tprotected $table = 'action_doctor';\n\n\tprotected $casts = [\n\t\t'id_key_performance' => 'int',\n\t\t'id_officer_general' => 'int',\n\t\t'quantity' => 'int',\n\t\t'score_per_action' => 'int',\n\t\t'total_score' => 'int'\n\t];\n\n\tprotected $fillable = [\n\t\t'id_key_performance',\n\t\t'id_officer_general',\n\t\t'quantity',\n\t\t'score_per_action',\n\t\t'total_score'\n\t];\n\n\tpublic function key_performance_doctor()\n\t{\n\t\treturn $this->belongsTo(KeyPerformanceDoctor::class, 'id_key_performance');\n\t}\n\n\tpublic function officer_general()\n\t{\n\t\treturn $this->belongsTo(OfficerGeneral::class, 'id_officer_general');\n\t}\n}\n"
+        }
+    ]
+}

@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon|null $updated_at
  * 
  * @property PublicHealthOffice $public_health_office
- * @property Collection|PublicHealthCenterDoctor[] $public_health_center_doctors
+ * @property Collection|OfficerGeneral[] $officer_generals
  *
  * @package App\Models
  */
@@ -46,8 +46,8 @@ class PublicHealthCenter extends Model
 		return $this->belongsTo(PublicHealthOffice::class, 'id_public_health_office');
 	}
 
-	public function public_health_center_doctors()
+	public function officer_generals()
 	{
-		return $this->hasMany(PublicHealthCenterDoctor::class, 'public_health_center');
+		return $this->hasMany(OfficerGeneral::class, 'public_health_center');
 	}
 }

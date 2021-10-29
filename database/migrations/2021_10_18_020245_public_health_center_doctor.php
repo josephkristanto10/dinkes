@@ -13,10 +13,14 @@ class PublicHealthCenterDoctor extends Migration
      */
     public function up()
     {
-        Schema::create('public_health_center_doctor', function (Blueprint $table) {
+        Schema::create('officer_general', function (Blueprint $table) {
             $table->increments("id");
             $table->integer('public_health_center')->unsigned();
             $table->foreign('public_health_center')->references('id')->on('public_health_center');
+            $table->integer('id_role')->unsigned();
+            $table->foreign('id_role')->references('id')->on('role');
+            $table->integer('id_position')->unsigned();
+            $table->foreign('id_position')->references('id')->on('position');
             $table->string('name');
             $table->string('nik');
             $table->string('address');

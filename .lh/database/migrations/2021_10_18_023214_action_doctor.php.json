@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 13,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1634524345017,
@@ -60,6 +60,26 @@
                 {
                     "date": 1634524589230,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n             $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n             $table->integer('id_public_health_doctor')->unsigned();\n             $table->foreign('id_public_health_doctor')->references('id')->on('public_health_center_doctor');\n             $table->integer('quantity');\n-            $table->string('score_per_action');\n-            $table->string('total_score');\n+            $table->integer('score_per_action');\n+            $table->integer('total_score');\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1635217795741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,7 +32,7 @@\n      * @return void\n      */\n     public function down()\n     {\n-        //\n+        Schema::dropIfExists('action_doctor');\n     }\n }\n"
+                },
+                {
+                    "date": 1635218805433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->increments(\"id\");\n             $table->integer('id_key_performance')->unsigned();\n             $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n             $table->integer('id_public_health_doctor')->unsigned();\n-            $table->foreign('id_public_health_doctor')->references('id')->on('public_health_center_doctor');\n+            $table->foreign('id_public_health_doctor')->references('id')->on('officer_general');\n             $table->integer('quantity');\n             $table->integer('score_per_action');\n             $table->integer('total_score');\n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1635323503907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+<?php\n+\n+use Illuminate\\Database\\Migrations\\Migration;\n+use Illuminate\\Database\\Schema\\Blueprint;\n+use Illuminate\\Support\\Facades\\Schema;\n+\n+class ActionDoctor extends Migration\n+{\n+    /**\n+     * Run the migrations.\n+     *\n+     * @return void\n+     */\n+    public function up()\n+    {\n+        Schema::create('action_doctor', function (Blueprint $table) {\n+            $table->increments(\"id\");\n+            $table->integer('id_key_performance')->unsigned();\n+            $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n+            $table->integer('id_public_health_doctor')->unsigned();\n+            $table->foreign('id_public_health_doctor')->references('id')->on('officer_general');\n+            $table->integer('quantity');\n+            $table->integer('score_per_action');\n+            $table->integer('total_score');\n+            $table->timestamps();\n+        });\n+    }\n+\n+    /**\n+     * Reverse the migrations.\n+     *\n+     * @return void\n+     */\n+    public function down()\n+    {\n+        Schema::dropIfExists('action_doctor');\n+    }\n+}\n"
+                },
+                {
+                    "date": 1635323512161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('action_doctor', function (Blueprint $table) {\n             $table->increments(\"id\");\n             $table->integer('id_key_performance')->unsigned();\n             $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n-            $table->integer('id_public_health_doctor')->unsigned();\n+            $table->integer('id_officer_general')->unsigned();\n             $table->foreign('id_public_health_doctor')->references('id')->on('officer_general');\n             $table->integer('quantity');\n             $table->integer('score_per_action');\n             $table->integer('total_score');\n@@ -35,42 +35,4 @@\n     {\n         Schema::dropIfExists('action_doctor');\n     }\n }\n-<?php\n-\n-use Illuminate\\Database\\Migrations\\Migration;\n-use Illuminate\\Database\\Schema\\Blueprint;\n-use Illuminate\\Support\\Facades\\Schema;\n-\n-class ActionDoctor extends Migration\n-{\n-    /**\n-     * Run the migrations.\n-     *\n-     * @return void\n-     */\n-    public function up()\n-    {\n-        Schema::create('action_doctor', function (Blueprint $table) {\n-            $table->increments(\"id\");\n-            $table->integer('id_key_performance')->unsigned();\n-            $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n-            $table->integer('id_public_health_doctor')->unsigned();\n-            $table->foreign('id_public_health_doctor')->references('id')->on('officer_general');\n-            $table->integer('quantity');\n-            $table->integer('score_per_action');\n-            $table->integer('total_score');\n-            $table->timestamps();\n-        });\n-    }\n-\n-    /**\n-     * Reverse the migrations.\n-     *\n-     * @return void\n-     */\n-    public function down()\n-    {\n-        Schema::dropIfExists('action_doctor');\n-    }\n-}\n"
+                },
+                {
+                    "date": 1635323517514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->increments(\"id\");\n             $table->integer('id_key_performance')->unsigned();\n             $table->foreign('id_key_performance')->references('id')->on('key_performance_doctor');\n             $table->integer('id_officer_general')->unsigned();\n-            $table->foreign('id_public_health_doctor')->references('id')->on('officer_general');\n+            $table->foreign('id_officer_general')->references('id')->on('officer_general');\n             $table->integer('quantity');\n             $table->integer('score_per_action');\n             $table->integer('total_score');\n             $table->timestamps();\n"
                 }
             ],
             "date": 1634524345017,

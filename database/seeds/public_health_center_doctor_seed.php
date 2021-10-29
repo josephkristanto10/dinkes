@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\PublicHealthCenterDoctor;
+use App\Models\OfficerGeneral;
 use Illuminate\Database\Seeder;
 
 class public_health_center_doctor_seed extends Seeder
@@ -13,10 +13,10 @@ class public_health_center_doctor_seed extends Seeder
     public function run()
     {
         include base_path().'/database/seeds/public_health_office.php';
-        $public_health_center_doctors = $public_health_center_doctor;
-        DB::table('public_health_center_doctor')->delete();
-        foreach($public_health_center_doctors as $phcd){
-            PublicHealthCenterDoctor::create($phcd);
+        $officer_generals = $officer_general;
+        DB::table('officer_general')->delete();
+        foreach($officer_generals as $og){
+            OfficerGeneral::create($og);
         }
     }
 }

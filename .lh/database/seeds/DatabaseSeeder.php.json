@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1634523630786,
@@ -36,6 +36,38 @@
                 {
                     "date": 1634525444034,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,7 @@\n            $this->call(public_health_center_seed::class);\n            $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n+           $this->call(key_performance_office_seed::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1635218899543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n     {\n         // $this->call(UserSeeder::class);\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n-           $this->call(public_health_center_doctor_seed::class);\n+        //    $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n-           $this->call(key_performance_office_seed::class);\n+           $this->call(action_doctor_seed::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1635220312476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,11 @@\n     {\n         // $this->call(UserSeeder::class);\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n+           $this->call(key_performance_doctor_seed::class);\n         //    $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n-           $this->call(action_doctor_seed::class);\n+        //    $this->call(action_doctor_seed::class);\n     }\n }\n"
+                },
+                {
+                    "date": 1635220318843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     {\n         // $this->call(UserSeeder::class);\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n-           $this->call(key_performance_doctor_seed::class);\n+           $this->call(role_seeder::class);\n         //    $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n         //    $this->call(action_doctor_seed::class);\n"
+                },
+                {
+                    "date": 1635220325698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n         // $this->call(UserSeeder::class);\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n            $this->call(role_seeder::class);\n+           $this->call(role_seeder::class);\n         //    $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n         //    $this->call(action_doctor_seed::class);\n"
+                },
+                {
+                    "date": 1635220330917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         // $this->call(UserSeeder::class);\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n            $this->call(role_seeder::class);\n-           $this->call(role_seeder::class);\n+           $this->call(position_seeder::class);\n         //    $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n         //    $this->call(action_doctor_seed::class);\n"
+                },
+                {
+                    "date": 1635323459310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n            $this->call(role_seeder::class);\n            $this->call(position_seeder::class);\n-        //    $this->call(public_health_center_doctor_seed::class);\n+           $this->call(public_health_center_doctor_seed::class);\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n         //    $this->call(action_doctor_seed::class);\n     }\n"
+                },
+                {
+                    "date": 1635323465991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n            $this->call(public_health_office_seed::class);\n            $this->call(public_health_center_seed::class);\n            $this->call(role_seeder::class);\n            $this->call(position_seeder::class);\n-           $this->call(public_health_center_doctor_seed::class);\n+           $this->call(public_health_center_doctor_seed::class); // Officer General\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n         //    $this->call(action_doctor_seed::class);\n     }\n"
+                },
+                {
+                    "date": 1635484363342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n            $this->call(position_seeder::class);\n            $this->call(public_health_center_doctor_seed::class); // Officer General\n            $this->call(key_performance_doctor_seed::class);\n            $this->call(key_performance_office_seed::class);\n-        //    $this->call(action_doctor_seed::class);\n+           $this->call(action_doctor_seed::class);\n     }\n }\n"
                 }
             ],
             "date": 1634523630786,

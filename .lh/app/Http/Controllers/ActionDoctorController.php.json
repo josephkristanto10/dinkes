@@ -1,0 +1,562 @@
+{
+    "sourceFile": "app/Http/Controllers/ActionDoctorController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 136,
+            "patches": [
+                {
+                    "date": 1635323938080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1635323945036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,11 @@\n     public function index()\n     {\n         //\n     }\n-    public function \n+    public function addaction(Request $request){\n+        \n+    }\n \n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635323975748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Models\\KeyPerformanceDoctor;\n use Illuminate\\Http\\Request;\n \n class ActionDoctorController extends Controller\n {\n@@ -15,9 +16,9 @@\n     {\n         //\n     }\n     public function addaction(Request $request){\n-        \n+\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635323992164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n-use App\\Models\\KeyPerformanceDoctor;\n+use App\\Models\\ActionDoctor;\n use Illuminate\\Http\\Request;\n \n class ActionDoctorController extends Controller\n {\n@@ -16,9 +16,9 @@\n     {\n         //\n     }\n     public function addaction(Request $request){\n-\n+        $request->\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324009871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     {\n         //\n     }\n     public function addaction(Request $request){\n-        $request->\n+        $myidaction = $request->idaction;\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324029350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n         //\n     }\n     public function addaction(Request $request){\n         $myidaction = $request->idaction;\n+        $idofficer = $request->iduser;\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324034777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,12 @@\n     {\n         //\n     }\n     public function addaction(Request $request){\n+        \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n+\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324041171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,13 @@\n     {\n         //\n     }\n     public function addaction(Request $request){\n-        \n+\n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n+        \n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324056505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n \n namespace App\\Http\\Controllers;\n-\n use App\\Models\\ActionDoctor;\n+use App\\Models\\ActionDoctor;\n use Illuminate\\Http\\Request;\n \n class ActionDoctorController extends Controller\n {\n@@ -20,9 +20,9 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n-        \n+        $actiondoctor_detail = ActionDoct\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324062705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <?php\n \n namespace App\\Http\\Controllers;\n+\n+use App\\Models\\KeyPerformanceDoctor;\n use App\\Models\\ActionDoctor;\n-use App\\Models\\ActionDoctor;\n use Illuminate\\Http\\Request;\n \n class ActionDoctorController extends Controller\n {\n"
+                },
+                {
+                    "date": 1635324071711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n-        $actiondoctor_detail = ActionDoct\n+        $actiondoctor_detail = new KeyPerformanceDoctor;\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324077585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n         $actiondoctor_detail = new KeyPerformanceDoctor;\n+        $actiondoctor_detail\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324087371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n         $actiondoctor_detail = new KeyPerformanceDoctor;\n-        $actiondoctor_detail\n+        $actiondoctor_detail->id_key_performance\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324096097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n-        $actiondoctor_detail = new KeyPerformanceDoctor;\n-        $actiondoctor_detail->id_key_performance\n+        $actiondoctor_detail = KeyPerformanceDoctor::find();\n+        \n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324114872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,12 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n \n-        $actiondoctor_detail = KeyPerformanceDoctor::find();\n+        $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         \n+        $qtyaction = $actiondoctor_detail[]]\n+        \n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324127748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         $idofficer = $request->iduser;\n \n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         \n-        $qtyaction = $actiondoctor_detail[]]\n+        $qtyaction = $actiondoctor_detail[0]->score;\n         \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635324132810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         \n         $qtyaction = $actiondoctor_detail[0]->score;\n         \n+        \n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324147443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,14 @@\n     public function addaction(Request $request){\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n-\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         \n+        \n         $qtyaction = $actiondoctor_detail[0]->score;\n+\n         \n-        \n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324159165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,9 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n-        \n-        \n-        $qtyaction = $actiondoctor_detail[0]->score;\n+        $scoreaction = $actiondoctor_detail[0]->score;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324176185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     public function addaction(Request $request){\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n+        $qtyperformance = $request->qtyperformance\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         $scoreaction = $actiondoctor_detail[0]->score;\n \n         \n"
+                },
+                {
+                    "date": 1635324182352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     public function addaction(Request $request){\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n-        $qtyperformance = $request->qtyperformance\n+        $qtyperformance = $request->qtyperformance;\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         $scoreaction = $actiondoctor_detail[0]->score;\n \n         \n"
+                },
+                {
+                    "date": 1635324192601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         $scoreaction = $actiondoctor_detail[0]->score;\n+        $totalscore = $scoreaction * $qtyperformance;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324197764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,12 @@\n         $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n         $scoreaction = $actiondoctor_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n+\n         \n+\n+        \n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635324204265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         $scoreaction = $actiondoctor_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n \n-        \n+        $actiondoctor_detail\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324209743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n-        $actiondoctor_detail = KeyPerformanceDoctor::find($myidaction);\n+        $keyperformance_detail = KeyPerformanceDoctor::find($myidaction);\n         $scoreaction = $actiondoctor_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n \n"
+                },
+                {
+                    "date": 1635324219069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,12 @@\n \n         $myidaction = $request->idaction;\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n+\n+        // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidaction);\n-        $scoreaction = $actiondoctor_detail[0]->score;\n+        $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n \n         $actiondoctor_detail\n"
+                },
+                {
+                    "date": 1635324229458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidaction);\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n-\n+        // insert\n         $actiondoctor_detail\n \n         \n     }\n"
+                },
+                {
+                    "date": 1635324238990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n-        $actiondoctor_detail\n+        $action_doctor_insert = \n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324244632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n-        $action_doctor_insert = \n+        $action_doctor_insert = new ActionDoctor;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324249788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n+        $action_doctor_insert \n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324259102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n-        $action_doctor_insert \n+        $action_doctor_insert->id_key_performance = \n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324273940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         //\n     }\n     public function addaction(Request $request){\n \n-        $myidaction = $request->idaction;\n+        $myidperformance = $request->idaction;\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n \n         // get Score\n"
+                },
+                {
+                    "date": 1635324297004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,10 @@\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n-        $action_doctor_insert->id_key_performance = \n+        $action_doctor_insert->id_key_performance = $myidperformance;\n+        $action_doctor_insert->id_officer_general = $idofficer;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324315298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n+        $action_doctor_insert->quantity = $qtyperformance;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324333715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n         $action_doctor_insert->quantity = $qtyperformance;\n+        $action_doctor_insert->score_per_action = $scoreaction;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324343055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n         $action_doctor_insert->quantity = $qtyperformance;\n         $action_doctor_insert->score_per_action = $scoreaction;\n+        $action_doctor_insert->total_score = $totalscore;\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635324352637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n         $action_doctor_insert->id_officer_general = $idofficer;\n         $action_doctor_insert->quantity = $qtyperformance;\n         $action_doctor_insert->score_per_action = $scoreaction;\n         $action_doctor_insert->total_score = $totalscore;\n+        $action_doctor_insert->save();\n \n         \n     }\n \n"
+                },
+                {
+                    "date": 1635325247623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n \n         // get Score\n-        $keyperformance_detail = KeyPerformanceDoctor::find($myidaction);\n+        $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n"
+                },
+                {
+                    "date": 1635325531978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n         $myidperformance = $request->idaction;\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n-\n+        echo $myidperformance. \" - \" . $idofficer . \" - \" . $qtyperformance; \n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n"
+                },
+                {
+                    "date": 1635326287938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n \n         $myidperformance = $request->idaction;\n         $idofficer = $request->iduser;\n         $qtyperformance = $request->qtyperformance;\n-        echo $myidperformance. \" - \" . $idofficer . \" - \" . $qtyperformance; \n+        // echo $myidperformance. \" - \" . $idofficer . \" - \" . $qtyperformance; \n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n"
+                },
+                {
+                    "date": 1635326297028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,9 @@\n         $qtyperformance = $request->qtyperformance;\n         // echo $myidperformance. \" - \" . $idofficer . \" - \" . $qtyperformance; \n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n+        echo $keyperformance_detail;\n         $scoreaction = $keyperformance_detail[0]->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n"
+                },
+                {
+                    "date": 1635326425147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         // echo $myidperformance. \" - \" . $idofficer . \" - \" . $qtyperformance; \n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n         echo $keyperformance_detail;\n-        $scoreaction = $keyperformance_detail[0]->score;\n+        $scoreaction = $keyperformance_detail->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n"
+                },
+                {
+                    "date": 1635326439529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,11 @@\n         $qtyperformance = $request->qtyperformance;\n         // echo $myidperformance. \" - \" . $idofficer . \" - \" . $qtyperformance; \n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n+     \n+        $scoreaction = $keyperformance_detail->score;\n         echo $keyperformance_detail;\n-        $scoreaction = $keyperformance_detail->score;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n"
+                },
+                {
+                    "date": 1635326455319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n      \n         $scoreaction = $keyperformance_detail->score;\n-        echo $keyperformance_detail;\n+        echo $scoreaction;\n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n"
+                },
+                {
+                    "date": 1635327259680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n         // get Score\n         $keyperformance_detail = KeyPerformanceDoctor::find($myidperformance);\n      \n         $scoreaction = $keyperformance_detail->score;\n-        echo $scoreaction;\n+        \n         $totalscore = $scoreaction * $qtyperformance;\n \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n"
+                },
+                {
+                    "date": 1635327267682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n         $action_doctor_insert->save();\n \n         \n     }\n+    public function get\n \n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635327286245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,11 @@\n         $action_doctor_insert->save();\n \n         \n     }\n-    public function get\n+    public function getAction(){\n+        $keyperformance_detail = KeyPerformanceDoctor\n+    }\n \n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635327293644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \n         \n     }\n     public function getAction(){\n-        $keyperformance_detail = KeyPerformanceDoctor\n+        $Action_Doctor = KeyPerformanceDoctor\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327306596,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,11 @@\n         $action_doctor_insert->save();\n \n         \n     }\n-    public function getAction(){\n-        $Action_Doctor = KeyPerformanceDoctor\n+    public function getAction(Request $request){\n+        $id = \n+        $Action_Doctor = ActionDoctor::\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327312816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n \n         \n     }\n     public function getAction(Request $request){\n-        $id = \n+        $id = $request->iduser\n         $Action_Doctor = ActionDoctor::\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327320870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,10 @@\n \n         \n     }\n     public function getAction(Request $request){\n-        $id = $request->iduser\n-        $Action_Doctor = ActionDoctor::\n+        $id = $request->iduser;\n+        $Action_Doctor = ActionDoctor::where();\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327329055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::where();\n+        $Action_Doctor = ActionDoctor::where(\"id_office_general\");\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327337683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::where(\"id_office_general\");\n+        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=','');\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327344241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=','');\n+        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=',$id);\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327359441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=',$id);\n+        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\");\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327364687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,10 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\");\n+        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n+\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327379592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n+        $Action_Doctor = ActionDoctor::join->()->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327389348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join->()->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n+        $Action_Doctor = ActionDoctor::join()->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327410352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join()->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327426340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327436409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327471458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327480544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         \n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n \n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635327507459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n-\n+        return print(json_encode())\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327525425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     }\n     public function getAction(Request $request){\n         $id = $request->iduser;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n-        return print(json_encode())\n+        return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635327831061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,11 @@\n         $action_doctor_insert->save();\n \n         \n     }\n-    public function getAction(Request $request){\n+    public function showAction(Request $request){\n         $id = $request->iduser;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_office_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635389713399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,8 +42,9 @@\n         \n     }\n     public function showAction(Request $request){\n         $id = $request->iduser;\n+        $chooseyear = $request->year;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n"
+                },
+                {
+                    "date": 1635389721186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,9 @@\n     }\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n+        $choosemonth = $request->\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n"
+                },
+                {
+                    "date": 1635389727329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     }\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n-        $choosemonth = $request->\n+        $choosemonth = $request->;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n"
+                },
+                {
+                    "date": 1635389742481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     }\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n-        $choosemonth = $request->;\n+        $choosemonth = $request->month;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n"
+                },
+                {
+                    "date": 1635389770780,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('fecha', '=', '06')->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635389806110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('fecha', '=', '06')->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('created_at', '=', '06')->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635389824305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('created_at', '=', '06')->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('created_at', '=', $choosemonth)->whereMonth('created_at', '=', $choosemonth)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635389830059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('created_at', '=', $choosemonth)->whereMonth('created_at', '=', $choosemonth)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('created_at', '=', $choosemonth)->whereMonth('created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635389875366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('created_at', '=', $choosemonth)->whereMonth('created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635389880472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     public function showAction(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n \n     /**\n"
+                },
+                {
+                    "date": 1635475452810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,10 @@\n         $choosemonth = $request->month;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n-\n+    public function getresultperday(Request $reqeust)\n+    \n     /**\n      * Show the form for creating a new resource.\n      *\n      * @return \\Illuminate\\Http\\Response\n"
+                },
+                {
+                    "date": 1635475473077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,12 @@\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     public function getresultperday(Request $reqeust)\n-    \n+    {\n+        $month = \"10\";\n+        $year = \"2021\";\n+    }\n     /**\n      * Show the form for creating a new resource.\n      *\n      * @return \\Illuminate\\Http\\Response\n"
+                },
+                {
+                    "date": 1635475480496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n \n use App\\Models\\KeyPerformanceDoctor;\n use App\\Models\\ActionDoctor;\n use Illuminate\\Http\\Request;\n+use DB:\n \n class ActionDoctorController extends Controller\n {\n     /**\n@@ -51,8 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = \"10\";\n         $year = \"2021\";\n+\n     }\n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635475500930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n use App\\Models\\KeyPerformanceDoctor;\n use App\\Models\\ActionDoctor;\n use Illuminate\\Http\\Request;\n-use DB:\n+use DB;\n \n class ActionDoctorController extends Controller\n {\n     /**\n@@ -52,8 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = \"10\";\n         $year = \"2021\";\n+        $selectdata = DB::table('')\n \n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475510895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = \"10\";\n         $year = \"2021\";\n-        $selectdata = DB::table('')\n+        $selectdata = DB::select()->get();\n \n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475521657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = \"10\";\n         $year = \"2021\";\n-        $selectdata = DB::select()->get();\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\")->get();\n \n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475563940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     {\n         $month = \"10\";\n         $year = \"2021\";\n         $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\")->get();\n-\n+        \n     }\n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635475707922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     {\n         $month = \"10\";\n         $year = \"2021\";\n         $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\")->get();\n-        \n+        return json_encode($selectdata);\n     }\n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635475747285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = \"10\";\n         $year = \"2021\";\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\")->get();\n+        $selectdata = DB::select(\"select * from action_doctor\")->get();\n         return json_encode($selectdata);\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475752355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = \"10\";\n         $year = \"2021\";\n-        $selectdata = DB::select(\"select * from action_doctor\")->get();\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\")->get();\n         return json_encode($selectdata);\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475774094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,11 +50,11 @@\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     public function getresultperday(Request $reqeust)\n     {\n-        $month = \"10\";\n-        $year = \"2021\";\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\")->get();\n+        $month = $request->month;\n+        $year = $request->month;\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\");\n         return json_encode($selectdata);\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475790167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n     }\n     public function getresultperday(Request $reqeust)\n     {\n         $month = $request->month;\n-        $year = $request->month;\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = 10 and year(created_at) = 2021 group by date(created_at)\");\n+        $year = $request->year;\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' group by date(created_at)\");\n         return json_encode($selectdata);\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635475807091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     {\n         $month = $request->month;\n         $year = $request->year;\n         $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' group by date(created_at)\");\n-        return json_encode($selectdata);\n+        return $selectdata;\n     }\n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635475816804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     {\n         $month = $request->month;\n         $year = $request->year;\n         $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' group by date(created_at)\");\n-        return $selectdata;\n+        return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635476015631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,10 +52,10 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = $request->month;\n         $year = $request->year;\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' group by date(created_at)\");\n-        return print(json_encode(array(\"data\"=>$Action_Doctor)));\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$iduser' group by date(created_at)\");\n+        return print(json_encode(array(\"data\"=>$selectdata)));\n     }\n     /**\n      * Show the form for creating a new resource.\n      *\n"
+                },
+                {
+                    "date": 1635476023767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,8 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = $request->month;\n         $year = $request->year;\n+        $user = $request->user;\n         $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$iduser' group by date(created_at)\");\n         return print(json_encode(array(\"data\"=>$selectdata)));\n     }\n     /**\n"
+                },
+                {
+                    "date": 1635476529150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     {\n         $month = $request->month;\n         $year = $request->year;\n         $user = $request->user;\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$iduser' group by date(created_at)\");\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$user' group by date(created_at)\");\n         return print(json_encode(array(\"data\"=>$selectdata)));\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635476543763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n     public function getresultperday(Request $reqeust)\n     {\n         $month = $request->month;\n         $year = $request->year;\n-        $user = $request->user;\n+        $user = $request->iduser;\n         $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$user' group by date(created_at)\");\n         return print(json_encode(array(\"data\"=>$selectdata)));\n     }\n     /**\n"
+                },
+                {
+                    "date": 1635476620262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n         $choosemonth = $request->month;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n-    public function getresultperday(Request $reqeust)\n+    public function getresultperday(Request $request)\n     {\n         $month = $request->month;\n         $year = $request->year;\n         $user = $request->iduser;\n"
+                },
+                {
+                    "date": 1635477983673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n     {\n         $month = $request->month;\n         $year = $request->year;\n         $user = $request->iduser;\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$user' group by date(created_at)\");\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, month(created_at) as bulan, year(created_at) as year, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$user' group by date(created_at)\");\n         return print(json_encode(array(\"data\"=>$selectdata)));\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635479226921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,8 +48,15 @@\n         $choosemonth = $request->month;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n+    public function showAction(Request $request){\n+        $id = $request->iduser;\n+        $chooseyear = $request->year;\n+        $choosemonth = $request->month;\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        return print(json_encode(array(\"data\"=>$Action_Doctor)));\n+    }\n     public function getresultperday(Request $request)\n     {\n         $month = $request->month;\n         $year = $request->year;\n"
+                },
+                {
+                    "date": 1635479242969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,12 +48,13 @@\n         $choosemonth = $request->month;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n-    public function showAction(Request $request){\n+    public function getdetail(Request $request){\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n+        $chooseday = $request->day;\n         $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     public function getresultperday(Request $request)\n"
+                },
+                {
+                    "date": 1635479259233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n         $chooseday = $request->day;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     public function getresultperday(Request $request)\n     {\n"
+                },
+                {
+                    "date": 1635479267862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n         $chooseday = $request->day;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->whereYear('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->whereDay('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     public function getresultperday(Request $request)\n     {\n"
+                },
+                {
+                    "date": 1635479273527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         $id = $request->iduser;\n         $chooseyear = $request->year;\n         $choosemonth = $request->month;\n         $chooseday = $request->day;\n-        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->whereDay('action_doctor.created_at', '=', $chooseyear)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n+        $Action_Doctor = ActionDoctor::join(\"key_performance_doctor\",'key_performance_doctor.id','=','action_doctor.id_key_performance')->where(\"id_officer_general\",'=',$id)->whereMonth('action_doctor.created_at', '=', $choosemonth)->whereYear('action_doctor.created_at', '=', $chooseyear)->whereDay('action_doctor.created_at', '=', $chooseday)->orderBy(\"created_at\",\"desc\")->select(\"action_doctor.*\", \"key_performance_doctor.name as kriteria\")->get();\n         return print(json_encode(array(\"data\"=>$Action_Doctor)));\n     }\n     public function getresultperday(Request $request)\n     {\n"
+                },
+                {
+                    "date": 1635479412256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     {\n         $month = $request->month;\n         $year = $request->year;\n         $user = $request->iduser;\n-        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, month(created_at) as bulan, year(created_at) as year, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$user' group by date(created_at)\");\n+        $selectdata = DB::select(\"SELECT day(created_at) as tanggal, month(created_at) as bulan, year(created_at) as tahun, count(id) as jumlah FROM `action_doctor` where month(created_at) = '$month' and year(created_at) = '$year' and id_officer_general = '$user' group by date(created_at)\");\n         return print(json_encode(array(\"data\"=>$selectdata)));\n     }\n     /**\n      * Show the form for creating a new resource.\n"
+                },
+                {
+                    "date": 1635480949077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,10 @@\n         $scoreaction = $keyperformance_detail->score;\n         \n         $totalscore = $scoreaction * $qtyperformance;\n \n+\n+        // find\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481001421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,8 @@\n         \n         $totalscore = $scoreaction * $qtyperformance;\n \n \n-        // find\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481151531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,10 @@\n         \n         $totalscore = $scoreaction * $qtyperformance;\n \n \n+\n+        //\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481162633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,10 @@\n         $totalscore = $scoreaction * $qtyperformance;\n \n \n \n-        //\n+        // find\n+        $findactiondoctor = \n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481180033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n \n         // find\n-        $findactiondoctor = \n+        $findactiondoctor = ActionDoctor::where()\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481281352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n         \n         $totalscore = $scoreaction * $qtyperformance;\n \n \n-\n+        $date = date(\"Y-m-d\");\n         // find\n         $findactiondoctor = ActionDoctor::where()\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n"
+                },
+                {
+                    "date": 1635481287148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n         $date = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::where()\n+        $findactiondoctor = ActionDoctor::whereDate();\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481305404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n         $date = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::whereDate();\n+        $findactiondoctor = ActionDoctor::->where()->whereDate();\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481317313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n         $date = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::->where()->whereDate();\n+        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',)->whereDate();\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481322482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n         $date = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',)->whereDate();\n+        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate();\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481344040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n         $date = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate();\n+        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',date);\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481350940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,11 +31,11 @@\n         \n         $totalscore = $scoreaction * $qtyperformance;\n \n \n-        $date = date(\"Y-m-d\");\n+        $mydate = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',date);\n+        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',mydate);\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481356200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n         $mydate = date(\"Y-m-d\");\n         // find\n-        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',mydate);\n+        $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',$mydate)->get();\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481372335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n \n         $mydate = date(\"Y-m-d\");\n         // find\n         $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',$mydate)->get();\n+        $jumlahfind = $findactiondoctor->count();\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481381962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,14 @@\n         $mydate = date(\"Y-m-d\");\n         // find\n         $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',$mydate)->get();\n         $jumlahfind = $findactiondoctor->count();\n+\n+        if($jumlahfind >0)\n+        {\n+            \n+        }\n+\n         // insert\n         $action_doctor_insert = new ActionDoctor;\n         $action_doctor_insert->id_key_performance = $myidperformance;\n         $action_doctor_insert->id_officer_general = $idofficer;\n"
+                },
+                {
+                    "date": 1635481388839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,21 +36,21 @@\n         // find\n         $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',$mydate)->get();\n         $jumlahfind = $findactiondoctor->count();\n \n-        if($jumlahfind >0)\n+        if($jumlahfind == 0)\n         {\n-            \n+    // insert\n+    $action_doctor_insert = new ActionDoctor;\n+    $action_doctor_insert->id_key_performance = $myidperformance;\n+    $action_doctor_insert->id_officer_general = $idofficer;\n+    $action_doctor_insert->quantity = $qtyperformance;\n+    $action_doctor_insert->score_per_action = $scoreaction;\n+    $action_doctor_insert->total_score = $totalscore;\n+    $action_doctor_insert->save();\n         }\n \n-        // insert\n-        $action_doctor_insert = new ActionDoctor;\n-        $action_doctor_insert->id_key_performance = $myidperformance;\n-        $action_doctor_insert->id_officer_general = $idofficer;\n-        $action_doctor_insert->quantity = $qtyperformance;\n-        $action_doctor_insert->score_per_action = $scoreaction;\n-        $action_doctor_insert->total_score = $totalscore;\n-        $action_doctor_insert->save();\n+    \n \n         \n     }\n     public function showAction(Request $request){\n"
+                },
+                {
+                    "date": 1635481394521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,17 +38,21 @@\n         $jumlahfind = $findactiondoctor->count();\n \n         if($jumlahfind == 0)\n         {\n-    // insert\n-    $action_doctor_insert = new ActionDoctor;\n-    $action_doctor_insert->id_key_performance = $myidperformance;\n-    $action_doctor_insert->id_officer_general = $idofficer;\n-    $action_doctor_insert->quantity = $qtyperformance;\n-    $action_doctor_insert->score_per_action = $scoreaction;\n-    $action_doctor_insert->total_score = $totalscore;\n-    $action_doctor_insert->save();\n+            // insert\n+            $action_doctor_insert = new ActionDoctor;\n+            $action_doctor_insert->id_key_performance = $myidperformance;\n+            $action_doctor_insert->id_officer_general = $idofficer;\n+            $action_doctor_insert->quantity = $qtyperformance;\n+            $action_doctor_insert->score_per_action = $scoreaction;\n+            $action_doctor_insert->total_score = $totalscore;\n+            $action_doctor_insert->save();\n         }\n+        else\n+        {\n+            \n+        }\n \n     \n \n         \n"
+                },
+                {
+                    "date": 1635481419381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n             $action_doctor_insert->save();\n         }\n         else\n         {\n-            \n+            $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',$mydate)\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481436384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n             $action_doctor_insert->save();\n         }\n         else\n         {\n-            $findactiondoctor = ActionDoctor::where(\"id_key_performance\",'=',$myidperformance)->whereDate(\"created_at\",'=',$mydate)\n+            $myfindid = \n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481446907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n             $action_doctor_insert->save();\n         }\n         else\n         {\n-            $myfindid = \n+            $myfindid = $findactiondoctor[0]->\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481462123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,10 @@\n             $action_doctor_insert->save();\n         }\n         else\n         {\n-            $myfindid = $findactiondoctor[0]->\n+            $myfindid = $findactiondoctor[0]->id;\n+            $updatemyquantity = ActionDoctor:find()\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481467817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,10 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n-            $updatemyquantity = ActionDoctor:find()\n+            $updatemyquantity = ActionDoctor::find($myfindid);\n+            \n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481515045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,10 +50,11 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n+            $myfindquantity = $findactiondoctor[0]->id;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n-            \n+            $updatemyquantity->quantity\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481525982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n-            $myfindquantity = $findactiondoctor[0]->id;\n+            $myfindquantity = $findactiondoctor[0]->score_per_action;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n \n"
+                },
+                {
+                    "date": 1635481536078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,10 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n-            $myfindquantity = $findactiondoctor[0]->score_per_action;\n+            $findactiondoctor[0]->id;\n+            $myfindscore = $findactiondoctor[0]->score_per_action;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n \n"
+                },
+                {
+                    "date": 1635481550449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n-            $findactiondoctor[0]->id;\n+            $myfindquantity = $findactiondoctor[0]->quantity;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n"
+                },
+                {
+                    "date": 1635481559337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n-            $myfindquantity = $findactiondoctor[0]->quantity;\n+            $myfindquantity = $findactiondoctor[0]->quantity+;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n"
+                },
+                {
+                    "date": 1635481567955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n         }\n         else\n         {\n             $myfindid = $findactiondoctor[0]->id;\n-            $myfindquantity = $findactiondoctor[0]->quantity+;\n+            $myfindquantity = $findactiondoctor[0]->quantity+$qtyperformance;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n"
+                },
+                {
+                    "date": 1635481573882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,8 +52,9 @@\n         {\n             $myfindid = $findactiondoctor[0]->id;\n             $myfindquantity = $findactiondoctor[0]->quantity+$qtyperformance;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n+            $mytotalscore = \n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n \n"
+                },
+                {
+                    "date": 1635481581105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         {\n             $myfindid = $findactiondoctor[0]->id;\n             $myfindquantity = $findactiondoctor[0]->quantity+$qtyperformance;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n-            $mytotalscore = \n+            $mytotalscore = myfindquantity\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n \n"
+                },
+                {
+                    "date": 1635481586695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         {\n             $myfindid = $findactiondoctor[0]->id;\n             $myfindquantity = $findactiondoctor[0]->quantity+$qtyperformance;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n-            $mytotalscore = myfindquantity\n+            $mytotalscore = $myfindquantity * $;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity\n         }\n \n"
+                },
+                {
+                    "date": 1635481596504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,11 +52,11 @@\n         {\n             $myfindid = $findactiondoctor[0]->id;\n             $myfindquantity = $findactiondoctor[0]->quantity+$qtyperformance;\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n-            $mytotalscore = $myfindquantity * $;\n+            $mytotalscore = $myfindquantity * $myfindscore;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n-            $updatemyquantity->quantity\n+            $updatemyquantity->quantity = $myfindquantity;\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481612643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,8 +55,9 @@\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n             $mytotalscore = $myfindquantity * $myfindscore;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity = $myfindquantity;\n+            $\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481625503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n             $myfindscore = $findactiondoctor[0]->score_per_action;\n             $mytotalscore = $myfindquantity * $myfindscore;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity = $myfindquantity;\n-            $\n+            $updatemyquantity->total_score = $mytotalscore;\n         }\n \n     \n \n"
+                },
+                {
+                    "date": 1635481631329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -56,8 +56,9 @@\n             $mytotalscore = $myfindquantity * $myfindscore;\n             $updatemyquantity = ActionDoctor::find($myfindid);\n             $updatemyquantity->quantity = $myfindquantity;\n             $updatemyquantity->total_score = $mytotalscore;\n+            $updatemyquantity->save();\n         }\n \n     \n \n"
+                }
+            ],
+            "date": 1635323938080,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass ActionDoctorController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function index()\n    {\n        //\n    }\n    public function \n\n    /**\n     * Show the form for creating a new resource.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function create()\n    {\n        //\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function store(Request $request)\n    {\n        //\n    }\n\n    /**\n     * Display the specified resource.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function show($id)\n    {\n        //\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function edit($id)\n    {\n        //\n    }\n\n    /**\n     * Update the specified resource in storage.\n     *\n     * @param  \\Illuminate\\Http\\Request  $request\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function update(Request $request, $id)\n    {\n        //\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     *\n     * @param  int  $id\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function destroy($id)\n    {\n        //\n    }\n}\n"
+        }
+    ]
+}
